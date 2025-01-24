@@ -58,17 +58,24 @@ exports.getProductById = async (req, res) => {
   }
 };
 
-// Create a new product
+// Create a new product (Admin and Vendor roles)
 exports.createProduct = async (req, res) => {
   try {
     const { name, description, category, priceOld, priceNew, freeDelivery, deliveryAmount, imageUrl } = req.body;
+    
+    const vendorId = req.user.id;
+    if (!vendorId) {
+      return res.status(403).json({ message: "Vendor ID not found in the token" });
+    }
 
     if (!name || !description || !priceOld || !priceNew) {
       return res.status(400).json({ message: "Name, description, old price, and new price are required" });
     }
 
+    // Generate a unique product URL (you can customize this logic)
     const productUrl = `product-${Math.random().toString(36).substring(7)}`;
 
+    // Create the new product
     const newProduct = new Product({
       name,
       description,
@@ -81,6 +88,7 @@ exports.createProduct = async (req, res) => {
       deliveryAmount,
       imageUrl,
       productUrl,
+      vendorId,  // Automatically assigned vendorId from the token
     });
 
     await newProduct.save();
@@ -91,15 +99,17 @@ exports.createProduct = async (req, res) => {
   }
 };
 
-// Update a product by ID
+// Update a product by ID (Admin, Staff, and Vendor roles)
 exports.updateProduct = async (req, res) => {
   try {
     const { name, description, category, priceOld, priceNew, freeDelivery, deliveryAmount, imageUrl } = req.body;
-
+    const vendorId = req.user.id; 
+    if (!vendorId) {
+      return res.status(403).json({ message: "Vendor ID not found in the token" });
+    }
     if (!name || !description || !priceOld || !priceNew) {
       return res.status(400).json({ message: "Name, description, old price, and new price are required" });
     }
-
     const updatedProduct = await Product.findByIdAndUpdate(
       req.params.id,
       {
@@ -109,16 +119,15 @@ exports.updateProduct = async (req, res) => {
         priceOld,
         priceNew,
         startDate: new Date(),
-        expiryDate: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000), // 7 days expiry
+        expiryDate: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000), 
         freeDelivery,
         deliveryAmount,
         imageUrl,
+        vendorId,
       },
       { new: true }
     );
-
     if (!updatedProduct) return res.status(404).json({ message: "Product not found" });
-
     res.json({ message: "Product updated successfully", product: updatedProduct });
   } catch (error) {
     console.error(error);
@@ -126,7 +135,8 @@ exports.updateProduct = async (req, res) => {
   }
 };
 
-// Delete a product by ID
+
+// Delete a product by ID (Admin only)
 exports.deleteProduct = async (req, res) => {
   try {
     const deletedProduct = await Product.findByIdAndDelete(req.params.id);
@@ -139,7 +149,7 @@ exports.deleteProduct = async (req, res) => {
   }
 };
 
-// Get products by vendor
+// Get products by vendor (Admin and Vendor roles)
 exports.getProductsByVendor = async (req, res) => {
   try {
     const { vendorId } = req.params;

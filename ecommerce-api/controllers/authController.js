@@ -7,42 +7,48 @@ exports.login = async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    // Check if the user exists
     const user = await User.findOne({ email }).populate("role");
     if (!user) {
-      return res.status(404).json({ message: "User not found" });
+      return res.status(404).json({
+        status: "error",
+        message: "User not found",
+      });
     }
 
-    // Verify the password
     const isPasswordValid = await bcrypt.compare(password, user.password);
     if (!isPasswordValid) {
-      return res.status(400).json({ message: "Invalid credentials" });
+      return res.status(400).json({
+        status: "error",
+        message: "Invalid credentials",
+      });
     }
 
-    // Generate JWT token with role included in the payload
     const token = jwt.sign(
       {
         id: user._id,
-        role: user.role,  // Include role name in the token payload
+        role: user.role,
       },
       process.env.JWT_SECRET,
-      { expiresIn: "1h" }  // Set token expiration time to 1 hour
+      { expiresIn: "1h" }
     );
-    
-    // Respond with the token and user details
+
     res.status(200).json({
+      status: "success",
       message: "Login successful",
       token,
       user: {
         id: user._id,
         username: user.username,
         email: user.email,
-        role: user.role.name,  // Include role info in the response
+        role: user.role,
       },
     });
   } catch (error) {
     console.error("Error in login:", error.message);
-    res.status(500).json({ message: "Server error" });
+    res.status(500).json({
+      status: "error",
+      message: "Server error. Please try again later.",
+    });
   }
 };
 
@@ -51,10 +57,32 @@ exports.signup = async (req, res) => {
   try {
     const { username, email, password, role } = req.body;
 
-    // Validate if the role exists
+    // Check if super-admin already exists
+    if (role === "super-admin") {
+      const existingSuperAdmin = await User.findOne({ role: "super-admin" });
+      if (existingSuperAdmin) {
+        return res.status(400).json({
+          status: "error",
+          message: "Super-admin already exists",
+        });
+      }
+    }
+
+    // Validate the role and check if user is allowed to create a certain role
     const userRole = await Role.findOne({ name: role });
     if (!userRole) {
-      return res.status(400).json({ message: `Invalid role: ${role}` });
+      return res.status(400).json({
+        status: "error",
+        message: `Invalid role: ${role}`,
+      });
+    }
+
+    // If role is "staff", ensure that it can only be created by super-admin
+    if (role === "staff" && req.user.role !== "super-admin") {
+      return res.status(403).json({
+        status: "error",
+        message: "Only super-admin can create staff users",
+      });
     }
 
     // Hash the password
@@ -65,14 +93,15 @@ exports.signup = async (req, res) => {
       username,
       email,
       password: hashedPassword,
-      role: userRole._id, // Store role ID
+      role: userRole.name,
     });
 
     // Save the user
     await newUser.save();
 
     res.status(201).json({
-      message: "User registered successfully",
+      status: "success",
+      message: `${role} registered successfully`,
       user: {
         id: newUser._id,
         username: newUser.username,
@@ -82,7 +111,10 @@ exports.signup = async (req, res) => {
     });
   } catch (error) {
     console.error("Error in signup:", error.message);
-    res.status(500).json({ message: "Server error" });
+    res.status(500).json({
+      status: "error",
+      message: "Server error. Please try again later.",
+    });
   }
 };
 
@@ -91,16 +123,26 @@ exports.verifyToken = async (req, res) => {
   try {
     const token = req.headers.authorization?.split(" ")[1];
     if (!token) {
-      return res.status(401).json({ message: "No token provided" });
+      return res.status(401).json({
+        status: "error",
+        message: "No token provided",
+      });
     }
 
     // Verify the token
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
-    res.status(200).json({ message: "Token is valid", user: decoded });
+    res.status(200).json({
+      status: "success",
+      message: "Token is valid",
+      user: decoded,
+    });
   } catch (error) {
     console.error("Error in token verification:", error.message);
-    res.status(401).json({ message: "Invalid or expired token" });
+    res.status(401).json({
+      status: "error",
+      message: "Invalid or expired token",
+    });
   }
 };
 
@@ -113,13 +155,19 @@ exports.changePassword = async (req, res) => {
     // Find the user
     const user = await User.findById(userId);
     if (!user) {
-      return res.status(404).json({ message: "User not found" });
+      return res.status(404).json({
+        status: "error",
+        message: "User not found",
+      });
     }
 
     // Validate the old password
     const isPasswordValid = await bcrypt.compare(oldPassword, user.password);
     if (!isPasswordValid) {
-      return res.status(400).json({ message: "Old password is incorrect" });
+      return res.status(400).json({
+        status: "error",
+        message: "Old password is incorrect",
+      });
     }
 
     // Hash the new password
@@ -129,9 +177,87 @@ exports.changePassword = async (req, res) => {
     user.password = hashedPassword;
     await user.save();
 
-    res.status(200).json({ message: "Password changed successfully" });
+    res.status(200).json({
+      status: "success",
+      message: "Password changed successfully",
+    });
   } catch (error) {
     console.error("Error in changing password:", error.message);
-    res.status(500).json({ message: "Server error" });
+    res.status(500).json({
+      status: "error",
+      message: "Server error. Please try again later.",
+    });
+  }
+};
+
+// Create Staff (Only accessible by Admin)
+exports.createStaff = async (req, res) => {
+  try {
+    // Check if the logged-in user is an admin
+    if (req.user.role !== "admin") {
+      return res.status(403).json({
+        status: "error",
+        message: "Only admin can create staff users",
+      });
+    }
+
+    const { username, email, password, role } = req.body;
+
+    // Validate that the role is 'staff' for creating a staff member
+    if (role !== "staff") {
+      return res.status(400).json({
+        status: "error",
+        message: "Role must be 'staff' to create a staff member",
+      });
+    }
+
+    // Check if the staff user already exists
+    const existingStaff = await User.findOne({ email });
+    if (existingStaff) {
+      return res.status(400).json({
+        status: "error",
+        message: "Staff user with this email already exists",
+      });
+    }
+
+    // Validate the staff role exists in the database
+    const staffRole = await Role.findOne({ name: "staff" });
+    if (!staffRole) {
+      return res.status(400).json({
+        status: "error",
+        message: "Staff role does not exist",
+      });
+    }
+
+    // Hash the password
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    // Create a new staff user
+    const newStaff = new User({
+      username,
+      email,
+      password: hashedPassword,
+      role: staffRole.name, 
+    });
+
+    // Save the staff user
+    await newStaff.save();
+
+    res.status(201).json({
+      status: "success",
+      message: "Staff user created successfully",
+      user: {
+        id: newStaff._id,
+        username: newStaff.username,
+        email: newStaff.email,
+        role: staffRole.name,
+      },
+    });
+  } catch (error) {
+    console.error("Error in creating staff:", error.message);
+    res.status(500).json({
+      status: "error",
+      message: "Server error. Please try again later.",
+    });
   }
 };

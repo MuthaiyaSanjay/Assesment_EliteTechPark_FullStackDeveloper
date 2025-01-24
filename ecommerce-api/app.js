@@ -29,6 +29,20 @@ app.get("/", (req, res) => {
 
 // Start server
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
+
+const server = app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
+});
+
+// If the port is already in use, try a different one
+server.on("error", (err) => {
+  if (err.code === "EADDRINUSE") {
+    console.log(`Port ${PORT} is already in use. Trying another port...`);
+    const newPort = 3001; // or any other port you want to try
+    app.listen(newPort, () => {
+      console.log(`Server running on port ${newPort}`);
+    });
+  } else {
+    console.error("Error starting server:", err);
+  }
 });

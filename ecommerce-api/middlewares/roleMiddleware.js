@@ -8,6 +8,7 @@ const roleMiddleware = (allowedRoles) => {
     const userRole = req.user?.role;
     console.log("Role MiddleWare :: " , userRole);
     console.log("User Details ::  " , req.user);
+    console.log("User ID ::  " , req.user.id);
 
     // Ensure that the userRole exists
     if (!userRole) {
