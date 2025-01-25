@@ -2,9 +2,7 @@ const roleMiddleware = (allowedRoles) => {
   return (req, res, next) => {
     // Log the user object to see if role is present
     console.log('User in roleMiddleware:', req.user);
-
-    console.log("Role MiddleWare :: ");
-    
+  
     const userRole = req.user?.role;
     console.log("Role MiddleWare :: " , userRole);
     console.log("User Details ::  " , req.user);

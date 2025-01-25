@@ -149,11 +149,11 @@ exports.verifyToken = async (req, res) => {
 // Change password
 exports.changePassword = async (req, res) => {
   try {
-    const { oldPassword, newPassword } = req.body;
-    const userId = req.user.id;
+    const { oldPassword, newPassword, email } = req.body;
+    console.log(`Email: ${email}`); // Logging the email for debugging purposes
 
-    // Find the user
-    const user = await User.findById(userId);
+    // Find the user by email
+    const user = await User.findByEmail(email);
     if (!user) {
       return res.status(404).json({
         status: "error",

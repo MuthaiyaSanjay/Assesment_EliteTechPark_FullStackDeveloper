@@ -11,7 +11,7 @@ router.post("/login", authController.login);
 
 // Protected routes
 router.get("/verify-token", authMiddleware, authController.verifyToken);
-router.post("/change-password", authMiddleware, authController.changePassword);
+router.post("/change-password/:id",authMiddleware, roleMiddleware(["admin", "self"]), authController.changePassword);
 
 // Staff creation route - Only accessible by Admin
 router.post("/create-staff", authMiddleware, roleMiddleware(["admin"]), authController.createStaff);

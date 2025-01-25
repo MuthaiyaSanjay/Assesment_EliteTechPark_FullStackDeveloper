@@ -7,4 +7,7 @@ const userSchema = new mongoose.Schema({
   role: { type: String, required: true },
 });
 
+userSchema.statics.findByEmail = function(email) {
+  return this.findOne({ email });
+};
 module.exports = mongoose.model("User", userSchema);

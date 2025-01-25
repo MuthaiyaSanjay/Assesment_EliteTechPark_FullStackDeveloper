@@ -1,0 +1,118 @@
+2025-01-25T14:29:44.371Z [[32minfo[39m]: Fetching all users
+2025-01-25T14:29:44.386Z [[32minfo[39m]: Fetched 5 users
+2025-01-25T14:31:09.192Z [[32minfo[39m]: Fetching products
+2025-01-25T14:31:09.213Z [[32minfo[39m]: Fetched 1 products
+2025-01-25T14:39:59.620Z [[32minfo[39m]: Fetching user with ID: 6793ebe78ad90fbd7346dfdc
+2025-01-25T14:39:59.628Z [[32minfo[39m]: User found: sanjay
+2025-01-25T14:46:23.575Z [[32minfo[39m]: Fetching user with ID: 6793ec6182f0ac4250fa20ce
+2025-01-25T14:46:23.588Z [[32minfo[39m]: User found: staff_sarah_kim
+2025-01-25T14:51:22.939Z [[32minfo[39m]: Fetching user with ID: 6793eca382f0ac4250fa20da
+2025-01-25T14:51:22.949Z [[32minfo[39m]: User found: vendor_james_williams
+2025-01-25T14:52:41.484Z [[32minfo[39m]: Fetching user with ID: 6793eca382f0ac4250fa20da
+2025-01-25T14:52:41.488Z [[32minfo[39m]: User found: vendor_james_williams
+2025-01-25T14:53:02.317Z [[32minfo[39m]: Updating user with ID: 6793ec6982f0ac4250fa20d2
+2025-01-25T14:53:02.329Z [[32minfo[39m]: User with ID: 6793ec6982f0ac4250fa20d2 updated successfully
+2025-01-25T14:53:04.369Z [[32minfo[39m]: Updating user with ID: 6793ec6982f0ac4250fa20d2
+2025-01-25T14:53:04.374Z [[32minfo[39m]: User with ID: 6793ec6982f0ac4250fa20d2 updated successfully
+2025-01-25T14:53:05.904Z [[32minfo[39m]: Updating user with ID: 6793ec6982f0ac4250fa20d2
+2025-01-25T14:53:05.909Z [[32minfo[39m]: User with ID: 6793ec6982f0ac4250fa20d2 updated successfully
+2025-01-25T14:53:24.409Z [[32minfo[39m]: Fetching user with ID: 6793eca382f0ac4250fa20da
+2025-01-25T14:53:24.413Z [[32minfo[39m]: User found: vendor_james_williams
+2025-01-25T14:53:37.777Z [[32minfo[39m]: Updating user with ID: 6793eca382f0ac4250fa20da
+2025-01-25T14:53:37.782Z [[32minfo[39m]: User with ID: 6793eca382f0ac4250fa20da updated successfully
+2025-01-25T14:53:39.099Z [[32minfo[39m]: Updating user with ID: 6793eca382f0ac4250fa20da
+2025-01-25T14:53:39.103Z [[32minfo[39m]: User with ID: 6793eca382f0ac4250fa20da updated successfully
+2025-01-25T14:53:40.102Z [[32minfo[39m]: Updating user with ID: 6793eca382f0ac4250fa20da
+2025-01-25T14:53:40.106Z [[32minfo[39m]: User with ID: 6793eca382f0ac4250fa20da updated successfully
+2025-01-25T15:01:02.440Z [[32minfo[39m]: Fetching user with ID: 6793eca382f0ac4250fa20da
+2025-01-25T15:01:02.450Z [[32minfo[39m]: User found: vendor_james_williams
+2025-01-25T15:27:14.122Z [[32minfo[39m]: Fetching products
+2025-01-25T15:27:14.137Z [[32minfo[39m]: Fetched 1 products
+2025-01-25T15:28:10.814Z [[32minfo[39m]: Fetching user with ID: 6793eca382f0ac4250fa20da
+2025-01-25T15:28:10.821Z [[32minfo[39m]: User found: vendor_james_williams
+2025-01-25T15:28:14.490Z [[32minfo[39m]: Fetching products
+2025-01-25T15:28:14.499Z [[32minfo[39m]: Fetched 1 products
+2025-01-25T15:30:11.579Z [[32minfo[39m]: Creating new product
+2025-01-25T15:30:11.583Z [[33mwarn[39m]: Image URL does not exist in the Image model
+2025-01-25T15:30:13.186Z [[32minfo[39m]: Creating new product
+2025-01-25T15:30:13.190Z [[33mwarn[39m]: Image URL does not exist in the Image model
+2025-01-25T15:30:22.760Z [[32minfo[39m]: Creating new product
+2025-01-25T15:30:22.771Z [[32minfo[39m]: Product created successfully
+2025-01-25T15:30:29.850Z [[32minfo[39m]: Fetching products
+2025-01-25T15:30:29.856Z [[32minfo[39m]: Fetched 2 products
+2025-01-25T15:32:57.788Z [[32minfo[39m]: Creating new product
+2025-01-25T15:32:57.792Z [[33mwarn[39m]: Image URL already exists in another product
+2025-01-25T15:32:59.741Z [[32minfo[39m]: Creating new product
+2025-01-25T15:32:59.746Z [[33mwarn[39m]: Image URL already exists in another product
+2025-01-25T15:33:33.980Z [[32minfo[39m]: Creating new product
+2025-01-25T15:33:33.985Z [[33mwarn[39m]: Image URL already exists in another product
+2025-01-25T15:33:35.235Z [[32minfo[39m]: Creating new product
+2025-01-25T15:33:35.240Z [[33mwarn[39m]: Image URL already exists in another product
+2025-01-25T15:33:55.855Z [[32minfo[39m]: Creating new product
+2025-01-25T15:33:55.860Z [[33mwarn[39m]: Image URL already exists in another product
+2025-01-25T15:34:47.812Z [[32minfo[39m]: Creating new product
+2025-01-25T15:34:47.817Z [[33mwarn[39m]: Image URL already exists in another product
+2025-01-25T15:34:49.101Z [[32minfo[39m]: Creating new product
+2025-01-25T15:34:49.108Z [[33mwarn[39m]: Image URL already exists in another product
+2025-01-25T15:34:55.304Z [[32minfo[39m]: Creating new product
+2025-01-25T15:34:55.309Z [[33mwarn[39m]: Image URL already exists in another product
+2025-01-25T15:34:56.510Z [[32minfo[39m]: Creating new product
+2025-01-25T15:34:56.518Z [[33mwarn[39m]: Image URL already exists in another product
+2025-01-25T15:35:10.635Z [[32minfo[39m]: Fetching products
+2025-01-25T15:35:10.643Z [[32minfo[39m]: Fetched 2 products
+2025-01-25T15:35:15.152Z [[32minfo[39m]: Fetching products
+2025-01-25T15:35:15.160Z [[32minfo[39m]: Fetched 2 products
+2025-01-25T15:36:15.812Z [[32minfo[39m]: Updating product with ID: 679371b97b62d8e637dd2f22
+2025-01-25T15:36:15.826Z [[33mwarn[39m]: Product with ID: 679371b97b62d8e637dd2f22 not found
+2025-01-25T15:36:27.228Z [[32minfo[39m]: Updating product with ID: 6794efb05053e898f4c5cbd7
+2025-01-25T15:36:27.233Z [[32minfo[39m]: Product updated successfully
+2025-01-25T15:39:23.189Z [[32minfo[39m]: Fetching user with ID: 6793eca382f0ac4250fa20da
+2025-01-25T15:39:23.194Z [[32minfo[39m]: User found: vendor_james_williams
+2025-01-25T15:39:40.431Z [[32minfo[39m]: Fetching products
+2025-01-25T15:39:40.436Z [[32minfo[39m]: Fetched 2 products
+2025-01-25T15:40:26.947Z [[32minfo[39m]: Fetching all users
+2025-01-25T15:40:26.951Z [[32minfo[39m]: Fetched 5 users
+2025-01-25T15:41:08.506Z [[32minfo[39m]: Updating product with ID: 6794efb05053e898f4c5cbd7
+2025-01-25T15:41:08.511Z [[32minfo[39m]: Product updated successfully
+2025-01-25T15:41:35.445Z [[32minfo[39m]: Updating product with ID: 6794efb05053e898f4c5cbd7
+2025-01-25T15:41:35.449Z [[32minfo[39m]: Product updated successfully
+2025-01-25T15:41:43.180Z [[32minfo[39m]: Updating product with ID: 6794efb05053e898f4c5cbd7q
+2025-01-25T15:41:43.182Z [[31merror[39m]: Error updating product: Cast to ObjectId failed for value "6794efb05053e898f4c5cbd7q" (type string) at path "_id" for model "Product"
+2025-01-25T15:41:44.526Z [[32minfo[39m]: Updating product with ID: 6794efb05053e898f4c5cbd7q
+2025-01-25T15:41:44.527Z [[31merror[39m]: Error updating product: Cast to ObjectId failed for value "6794efb05053e898f4c5cbd7q" (type string) at path "_id" for model "Product"
+2025-01-25T15:41:47.594Z [[32minfo[39m]: Updating product with ID: 6794efb05053e898f4c5cbd7
+2025-01-25T15:41:47.598Z [[32minfo[39m]: Product updated successfully
+2025-01-25T15:46:31.140Z [[32minfo[39m]: Updating product with ID: 6794efb05053e898f4c5cbd7
+2025-01-25T15:46:31.173Z [[32minfo[39m]: Product updated successfully
+2025-01-25T15:46:32.609Z [[32minfo[39m]: Updating product with ID: 6794efb05053e898f4c5cbd7
+2025-01-25T15:46:32.620Z [[32minfo[39m]: Product updated successfully
+2025-01-25T15:47:30.800Z [[32minfo[39m]: Updating product with ID: 6794efb05053e898f4c5cbd7
+2025-01-25T15:47:30.814Z [[32minfo[39m]: Product updated successfully
+2025-01-25T15:47:35.704Z [[32minfo[39m]: Updating product with ID: 6794efb05053e898f4c5cbd7
+2025-01-25T15:47:35.707Z [[33mwarn[39m]: Image URL does not exist in the Image model
+2025-01-25T15:47:59.092Z [[32minfo[39m]: Updating product with ID: 6794efb05053e898f4c5cbd7
+2025-01-25T15:47:59.099Z [[33mwarn[39m]: Image URL already exists in another product
+2025-01-25T15:48:06.220Z [[32minfo[39m]: Updating product with ID: 6794efb05053e898f4c5cbd7
+2025-01-25T15:48:06.229Z [[32minfo[39m]: Product updated successfully
+2025-01-25T15:49:34.734Z [[32minfo[39m]: Fetching users with role: vendor
+2025-01-25T15:49:34.751Z [[32minfo[39m]: Fetched 2 users with role: vendor
+2025-01-25T15:50:10.984Z [[32minfo[39m]: Fetching products
+2025-01-25T15:50:10.995Z [[32minfo[39m]: Fetched 2 products
+2025-01-25T15:50:43.326Z [[32minfo[39m]: Fetching user with ID: 6793eca382f0ac4250fa20da
+2025-01-25T15:50:43.333Z [[32minfo[39m]: User found: vendor_james_williams
+2025-01-25T15:50:44.581Z [[32minfo[39m]: Fetching user with ID: 6793eca382f0ac4250fa20da
+2025-01-25T15:50:44.586Z [[32minfo[39m]: User found: vendor_james_williams
+2025-01-25T15:51:11.306Z [[32minfo[39m]: Fetching user with ID: 6793ec6182f0ac4250fa20ce
+2025-01-25T15:51:11.309Z [[32minfo[39m]: User found: staff_sarah_kim
+2025-01-25T15:51:35.467Z [[32minfo[39m]: Fetching user with ID: 6793ec9282f0ac4250fa20d6
+2025-01-25T15:51:35.471Z [[32minfo[39m]: User found: vendor_rachel_smith
+2025-01-25T15:51:36.550Z [[32minfo[39m]: Fetching user with ID: 6793ec9282f0ac4250fa20d6
+2025-01-25T15:51:36.554Z [[32minfo[39m]: User found: vendor_rachel_smith
+2025-01-25T15:51:37.401Z [[32minfo[39m]: Fetching user with ID: 6793ec9282f0ac4250fa20d6
+2025-01-25T15:51:37.405Z [[32minfo[39m]: User found: vendor_rachel_smith
+2025-01-25T15:51:56.116Z [[32minfo[39m]: Creating new product
+2025-01-25T15:51:56.120Z [[33mwarn[39m]: Image URL does not exist in the Image model
+2025-01-25T15:52:39.272Z [[32minfo[39m]: Creating new product
+2025-01-25T15:52:39.277Z [[33mwarn[39m]: Image URL does not exist in the Image model
+2025-01-25T15:53:26.010Z [[32minfo[39m]: Creating new product
+2025-01-25T15:53:26.024Z [[32minfo[39m]: Product created successfully
