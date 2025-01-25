@@ -1,8 +1,7 @@
 # E-commerce API
 
 ## Project Title
-Node.js Based Full Stack Application for Developer Assessment
-
+Node.js Full Stack Application with RESTful API for E-Commerce Platform
 
 ## Project Goal
 The goal of this project is to develop a robust and scalable backend for an e-commerce platform. This backend handles core functionalities like user authentication, product management, and role-based access control for admins, staff, vendors, and buyers.
