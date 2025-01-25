@@ -112,6 +112,7 @@ ecommerce-api/
 ### Users
 | Method | Endpoint                | Description              |
 |--------|-------------------------|--------------------------|
+| GET    | `/api/users/roles`      | Retrieve user by Rles  (Admin only)) |
 | GET    | `/api/users`            | Retrieve all users (Admin, Self only) |
 | GET    | `/api/users/:id`        | Retrieve user by ID  (Admin, Self only)) |
 | PUT    | `/api/users/:id`        | Update user details  (Admin, Self only)) |
