@@ -58,7 +58,6 @@ exports.getProductById = async (req, res) => {
   }
 };
 
-// Create a new product (Admin and Vendor roles)
 exports.createProduct = async (req, res) => {
   try {
     const { name, description, category, priceOld, priceNew, freeDelivery, deliveryAmount, imageUrl } = req.body;
@@ -75,6 +74,10 @@ exports.createProduct = async (req, res) => {
     // Generate a unique product URL (you can customize this logic)
     const productUrl = `product-${Math.random().toString(36).substring(7)}`;
 
+    // Calculate expiry date (7 days from the start date)
+    const startDate = new Date();
+    const expiryDate = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000); // 7 days expiry
+
     // Create the new product
     const newProduct = new Product({
       name,
@@ -82,8 +85,8 @@ exports.createProduct = async (req, res) => {
       category,
       priceOld,
       priceNew,
-      startDate: new Date(),
-      expiryDate: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000), // 7 days expiry
+      startDate,
+      expiryDate,
       freeDelivery,
       deliveryAmount,
       imageUrl,
@@ -110,6 +113,11 @@ exports.updateProduct = async (req, res) => {
     if (!name || !description || !priceOld || !priceNew) {
       return res.status(400).json({ message: "Name, description, old price, and new price are required" });
     }
+
+    // Calculate expiry date (7 days from the start date)
+    const startDate = new Date();
+    const expiryDate = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000); // 7 days expiry
+
     const updatedProduct = await Product.findByIdAndUpdate(
       req.params.id,
       {
@@ -118,8 +126,8 @@ exports.updateProduct = async (req, res) => {
         category,
         priceOld,
         priceNew,
-        startDate: new Date(),
-        expiryDate: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000), 
+        startDate,
+        expiryDate,
         freeDelivery,
         deliveryAmount,
         imageUrl,
