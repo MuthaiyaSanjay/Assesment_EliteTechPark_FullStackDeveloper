@@ -1,0 +1,300 @@
+[{
+  "_id": {
+    "$oid": "679508f627f2274bd345762a"
+  },
+  "name": "Portable Power Bank 10000mAh",
+  "description": "Compact and powerful portable power bank for charging smartphones and tablets on the go.",
+  "category": "Electronics",
+  "priceOld": 39.99,
+  "priceNew": 29.99,
+  "startDate": {
+    "$date": "2025-01-25T15:53:26.016Z"
+  },
+  "expiryDate": {
+    "$date": "2025-02-01T15:53:26.016Z"
+  },
+  "freeDelivery": true,
+  "deliveryAmount": 0,
+  "imageUrl": "localhost:12345/uploads/c358f2d3-79af-40c0-99fa-2c8e6952ac94.jpg",
+  "productUrl": "product-vds9u5",
+  "vendorId": {
+    "$oid": "6793ec9282f0ac4250fa20d6"
+  },
+  "createdAt": {
+    "$date": "2025-01-25T15:53:26.020Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-25T15:53:26.020Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6795240dfb4f031896eb799a"
+  },
+  "name": "Classic Running Shoes",
+  "description": "Durable and comfortable running shoes perfect for all terrains.",
+  "category": "Shoes",
+  "priceOld": 3999,
+  "priceNew": 2999,
+  "startDate": {
+    "$date": "2025-01-25T17:49:01.836Z"
+  },
+  "expiryDate": {
+    "$date": "2025-02-01T17:49:01.836Z"
+  },
+  "freeDelivery": true,
+  "deliveryAmount": 0,
+  "imageUrl": "localhost:12345/uploads/f0c0b99a-e555-43e7-a30e-e8c0377b1472.jpg",
+  "productUrl": "product-fskjq",
+  "vendorId": {
+    "$oid": "6793ebe78ad90fbd7346dfdc"
+  },
+  "createdAt": {
+    "$date": "2025-01-25T17:49:01.838Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-25T17:49:01.838Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67952417fb4f031896eb799e"
+  },
+  "name": "Denim Jeans",
+  "description": "Stylish and durable denim jeans made with high-quality fabric.",
+  "category": "Clothing",
+  "priceOld": 1999,
+  "priceNew": 1499,
+  "startDate": {
+    "$date": "2025-01-25T17:49:11.615Z"
+  },
+  "expiryDate": {
+    "$date": "2025-02-01T17:49:11.615Z"
+  },
+  "freeDelivery": true,
+  "deliveryAmount": 0,
+  "imageUrl": "localhost:12345/uploads/af1346dd-d971-43e2-80e6-e0221b393b24.jpg",
+  "productUrl": "product-drfgsf",
+  "vendorId": {
+    "$oid": "6793ebe78ad90fbd7346dfdc"
+  },
+  "createdAt": {
+    "$date": "2025-01-25T17:49:11.616Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-25T17:49:11.616Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6795241ffb4f031896eb79a2"
+  },
+  "name": "Smart Watch",
+  "description": "Feature-packed smart watch with health and fitness tracking.",
+  "category": "Watches",
+  "priceOld": 4999,
+  "priceNew": 3999,
+  "startDate": {
+    "$date": "2025-01-25T17:49:19.806Z"
+  },
+  "expiryDate": {
+    "$date": "2025-02-01T17:49:19.806Z"
+  },
+  "freeDelivery": true,
+  "deliveryAmount": 0,
+  "imageUrl": "localhost:12345/uploads/9b82862e-a499-48cc-b614-bdf69259bc36.jpg",
+  "productUrl": "product-c9syq8",
+  "vendorId": {
+    "$oid": "6793ebe78ad90fbd7346dfdc"
+  },
+  "createdAt": {
+    "$date": "2025-01-25T17:49:19.807Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-25T17:49:19.807Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6795242bfb4f031896eb79a6"
+  },
+  "name": "Smartphone",
+  "description": "Latest smartphone with high-speed performance and advanced features.",
+  "category": "Mobiles",
+  "priceOld": 19999,
+  "priceNew": 17999,
+  "startDate": {
+    "$date": "2025-01-25T17:49:31.574Z"
+  },
+  "expiryDate": {
+    "$date": "2025-02-01T17:49:31.574Z"
+  },
+  "freeDelivery": true,
+  "deliveryAmount": 0,
+  "imageUrl": "localhost:12345/uploads/a9327345-54a4-41e9-84bd-9d2c7ca701db.jpg",
+  "productUrl": "product-dayogf",
+  "vendorId": {
+    "$oid": "6793ebe78ad90fbd7346dfdc"
+  },
+  "createdAt": {
+    "$date": "2025-01-25T17:49:31.575Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-25T17:49:31.575Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67952433fb4f031896eb79aa"
+  },
+  "name": "Cotton T-Shirts",
+  "description": "Pack of 3 premium cotton t-shirts, breathable and stylish.",
+  "category": "Clothing",
+  "priceOld": 1299,
+  "priceNew": 999,
+  "startDate": {
+    "$date": "2025-01-25T17:49:39.593Z"
+  },
+  "expiryDate": {
+    "$date": "2025-02-01T17:49:39.593Z"
+  },
+  "freeDelivery": true,
+  "deliveryAmount": 0,
+  "imageUrl": "localhost:12345/uploads/4fd9be80-44da-4c8f-8ea4-74d9f16f17e6.jpg",
+  "productUrl": "product-ak9u3",
+  "vendorId": {
+    "$oid": "6793ebe78ad90fbd7346dfdc"
+  },
+  "createdAt": {
+    "$date": "2025-01-25T17:49:39.594Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-25T17:49:39.594Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6795243cfb4f031896eb79ae"
+  },
+  "name": "Electric Trimmer",
+  "description": "Precision electric trimmer for grooming and styling.",
+  "category": "Grooming",
+  "priceOld": 1799,
+  "priceNew": 1499,
+  "startDate": {
+    "$date": "2025-01-25T17:49:48.204Z"
+  },
+  "expiryDate": {
+    "$date": "2025-02-01T17:49:48.204Z"
+  },
+  "freeDelivery": true,
+  "deliveryAmount": 0,
+  "imageUrl": "localhost:12345/uploads/808d7f22-226f-4e41-b71f-b1e44ec967db.jpg",
+  "productUrl": "product-blh9wj",
+  "vendorId": {
+    "$oid": "6793ebe78ad90fbd7346dfdc"
+  },
+  "createdAt": {
+    "$date": "2025-01-25T17:49:48.205Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-25T17:49:48.205Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6795244cfb4f031896eb79b2"
+  },
+  "name": "Laptop",
+  "description": "High-performance laptop for work and gaming.",
+  "category": "Laptops",
+  "priceOld": 69999,
+  "priceNew": 65999,
+  "startDate": {
+    "$date": "2025-01-25T17:50:04.119Z"
+  },
+  "expiryDate": {
+    "$date": "2025-02-01T17:50:04.119Z"
+  },
+  "freeDelivery": true,
+  "deliveryAmount": 0,
+  "imageUrl": "localhost:12345/uploads/5647da0b-e4c3-4295-b8a1-9d10c9d5eb9c.jpg",
+  "productUrl": "product-c7dbge",
+  "vendorId": {
+    "$oid": "6793ebe78ad90fbd7346dfdc"
+  },
+  "createdAt": {
+    "$date": "2025-01-25T17:50:04.120Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-25T17:50:04.120Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67952461fb4f031896eb79b6"
+  },
+  "name": "Fashion Accessories",
+  "description": "Elegant accessories including bracelets, necklaces, and rings.",
+  "category": "Accessories",
+  "priceOld": 999,
+  "priceNew": 799,
+  "startDate": {
+    "$date": "2025-01-25T17:50:25.062Z"
+  },
+  "expiryDate": {
+    "$date": "2025-02-01T17:50:25.062Z"
+  },
+  "freeDelivery": true,
+  "deliveryAmount": 0,
+  "imageUrl": "localhost:12345/uploads/58340d97-7a99-4693-a60c-4805b15bc67f.jpg",
+  "productUrl": "product-qoh61bs",
+  "vendorId": {
+    "$oid": "6793ebe78ad90fbd7346dfdc"
+  },
+  "createdAt": {
+    "$date": "2025-01-25T17:50:25.062Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-25T17:50:25.062Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6795246bfb4f031896eb79ba"
+  },
+  "name": "Home Electronics",
+  "description": "Essential electronics for a modern home.",
+  "category": "Electronics",
+  "priceOld": 5999,
+  "priceNew": 4999,
+  "startDate": {
+    "$date": "2025-01-25T17:50:35.276Z"
+  },
+  "expiryDate": {
+    "$date": "2025-02-01T17:50:35.276Z"
+  },
+  "freeDelivery": true,
+  "deliveryAmount": 0,
+  "imageUrl": "localhost:12345/uploads/81d48d2d-7027-4c58-af0c-cac40c1758e6.jpg",
+  "productUrl": "product-y7y102",
+  "vendorId": {
+    "$oid": "6793ebe78ad90fbd7346dfdc"
+  },
+  "createdAt": {
+    "$date": "2025-01-25T17:50:35.277Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-25T17:50:35.277Z"
+  },
+  "__v": 0
+}]

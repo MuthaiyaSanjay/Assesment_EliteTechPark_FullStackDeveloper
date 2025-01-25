@@ -57,18 +57,18 @@ exports.signup = async (req, res) => {
   try {
     const { username, email, password, role } = req.body;
 
-    // Check if super-admin already exists
-    if (role === "super-admin") {
-      const existingSuperAdmin = await User.findOne({ role: "super-admin" });
-      if (existingSuperAdmin) {
-        return res.status(400).json({
+    // Prevent creating restricted roles directly
+    const restrictedRoles = ["admin", "super-admin", "staff"];
+    if (restrictedRoles.includes(role)) {
+      if (!req.user || req.user.role !== "super-admin") {
+        return res.status(403).json({
           status: "error",
-          message: "Super-admin already exists",
+          message: `Access denied: You are not authorized to create a ${role} user.`,
         });
       }
     }
 
-    // Validate the role and check if user is allowed to create a certain role
+    // Validate the role from the Role model
     const userRole = await Role.findOne({ name: role });
     if (!userRole) {
       return res.status(400).json({
@@ -77,18 +77,21 @@ exports.signup = async (req, res) => {
       });
     }
 
-    // If role is "staff", ensure that it can only be created by super-admin
-    if (role === "staff" && req.user.role !== "super-admin") {
-      return res.status(403).json({
-        status: "error",
-        message: "Only super-admin can create staff users",
-      });
+    // Check if a super-admin already exists
+    if (role === "super-admin") {
+      const existingSuperAdmin = await User.findOne({ role: "super-admin" });
+      if (existingSuperAdmin) {
+        return res.status(400).json({
+          status: "error",
+          message: "A super-admin already exists.",
+        });
+      }
     }
 
     // Hash the password
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    // Create a new user
+    // Create the user
     const newUser = new User({
       username,
       email,
@@ -96,7 +99,7 @@ exports.signup = async (req, res) => {
       role: userRole.name,
     });
 
-    // Save the user
+    // Save the user to the database
     await newUser.save();
 
     res.status(201).json({
@@ -110,6 +113,17 @@ exports.signup = async (req, res) => {
       },
     });
   } catch (error) {
+    if (error.code === 11000) {
+      // Handle duplicate key error
+      const duplicateField = Object.keys(error.keyValue)[0];
+      const duplicateValue = error.keyValue[duplicateField];
+
+      return res.status(400).json({
+        status: "error",
+        message: `Duplicate value: The ${duplicateField} '${duplicateValue}' is already in use.`,
+      });
+    }
+
     console.error("Error in signup:", error.message);
     res.status(500).json({
       status: "error",

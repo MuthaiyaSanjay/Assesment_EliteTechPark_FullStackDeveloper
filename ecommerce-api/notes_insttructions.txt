@@ -1,0 +1,45 @@
+running command :: npm start
+
+
+
+localhost:3000/api/auth/login
+
+
+for login::
+{
+    "email": "sanjay@admin.com",
+    "password": "admin@123"
+}
+
+staff
+{
+    "email": "sarah.kim@staff.com",
+    "password": "staff@122"
+}
+
+vendor
+{
+    "email": "rachel.smith@techstore.com",
+    "password": "vendor@123"
+}
+
+
+
+{
+  "username": "admin_john_doe",
+  "name": "John Doe",
+  "email": "john.doe@admin.com",
+  "password": "admin@123",
+  "role": "admin"
+}
+
+
+{
+  "username": "staff_sarah_kim",
+  "name": "Sarah Kim",
+  "email": "sarah.kim@staff.com",
+  "password": "staff@123",
+  "role": "staff"
+}
+
+

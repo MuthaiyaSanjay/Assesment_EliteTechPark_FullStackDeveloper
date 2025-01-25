@@ -1,0 +1,532 @@
+{
+	"info": {
+		"_postman_id": "2ae1a4c9-f396-406b-be7b-e90bf2fc22b2",
+		"name": "elite-tech-park-assesment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29375150"
+	},
+	"item": [
+		{
+			"name": "auth(login/signup)",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"sanjay@admin.com\",\r\n    \"password\": \"admin@123\"\r\n}\r\n//admin\r\n// staff\r\n// {\r\n//     \"email\": \"sarah.kim@staff.com\",\r\n//     \"password\": \"staff@122\"\r\n// }\r\n// {\r\n//     \"email\": \"rachel.smith@techstore.com\",\r\n//     \"password\": \"vendor@123\"\r\n// }\r\n////vendor",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/auth/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change-password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3OTNlYzYxODJmMGFjNDI1MGZhMjBjZSIsInJvbGUiOiJzdGFmZiIsImlhdCI6MTczNzgxODQyNCwiZXhwIjoxNzM3ODIyMDI0fQ.3HgtYULrRWmhewMIi2oMf6c_uZZPOVXogMJlZVpV7Ag",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"sarah.kim@staff.com\",\r\n    \"oldPassword\": \"staff@123\",\r\n    \"newPassword\": \"staff@122\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/auth/change-password/6793ec6182f0ac4250fa20ce",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"change-password",
+								"6793ec6182f0ac4250fa20ce"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"admin_john_doe\",\r\n  \"name\": \"John Doe\",\r\n  \"email\": \"john.doe@company.com\",\r\n  \"password\": \"admin@123\",\r\n  \"role\": \"buyer\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/auth/signup",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create-staff",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"staff_michael_brown\",\r\n  \"name\": \"Michael Brown\",\r\n  \"email\": \"michael.brown@staff.com\",\r\n  \"password\": \"staff@123\",\r\n  \"role\": \"staff\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/auth/create-staff",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"create-staff"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "getall",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/users/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateByUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3OTNlY2EzODJmMGFjNDI1MGZhMjBkYSIsInJvbGUiOiJ2ZW5kb3IiLCJpYXQiOjE3Mzc4MTY3MjUsImV4cCI6MTczNzgyMDMyNX0.LOgeWbGmAs6xOMZe8iPhwAkkM_57hEUATXNsZXO5xOg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": \"6793eca382f0ac4250fa20da\",\r\n        \"name\": \"vendor_james_williams\",\r\n        \"email\": \"james.williams@techstore.com\",\r\n        \"role\": \"vendor\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/users/6793eca382f0ac4250fa20da",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"6793eca382f0ac4250fa20da"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetByRoles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/users/roles?role=vendor",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"roles"
+							],
+							"query": [
+								{
+									"key": "role",
+									"value": "vendor"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3OTNlYzkyODJmMGFjNDI1MGZhMjBkNiIsInJvbGUiOiJ2ZW5kb3IiLCJpYXQiOjE3Mzc4MTk2NTUsImV4cCI6MTczNzgyMzI1NX0.5ni42HJO3cFB9J2sL9o3tviXPvvN-mCdZynRm1CiOa0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/users/6793ec9282f0ac4250fa20d6",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"6793ec9282f0ac4250fa20d6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteById",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/users/67934145b0f4fc01641f6ddb",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"67934145b0f4fc01641f6ddb"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "create product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3OTNlYzkyODJmMGFjNDI1MGZhMjBkNiIsInJvbGUiOiJ2ZW5kb3IiLCJpYXQiOjE3Mzc4MTk2NTUsImV4cCI6MTczNzgyMzI1NX0.5ni42HJO3cFB9J2sL9o3tviXPvvN-mCdZynRm1CiOa0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"_id\": \"6794efb05053e898f4c5cbd7\",\r\n            \"name\": \"Portable Power Bank 10000mAh\",\r\n            \"description\": \"Compact and powerful portable power bank for charging smartphones and tablets on the go.\",\r\n            \"category\": \"Electronics\",\r\n            \"priceOld\": 39.99,\r\n            \"priceNew\": 29.99,\r\n            \"startDate\": \"2025-01-25T15:48:06.225Z\",\r\n            \"expiryDate\": \"2025-02-01T15:48:06.225Z\",\r\n            \"freeDelivery\": true,\r\n            \"deliveryAmount\": 0,\r\n            \"imageUrl\": \"localhost:12345/uploads/c358f2d3-79af-40c0-99fa-2c8e6952ac94.jpg\",\r\n            \"productUrl\": \"product-nytfm7n\",\r\n            \"createdAt\": \"2025-01-25T14:05:36.516Z\",\r\n            \"updatedAt\": \"2025-01-25T15:48:06.226Z\",\r\n            \"__v\": 0\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/products",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getall products",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/products",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3OTNlYzkyODJmMGFjNDI1MGZhMjBkNiIsInJvbGUiOiJ2ZW5kb3IiLCJpYXQiOjE3Mzc4MTk2NTUsImV4cCI6MTczNzgyMzI1NX0.5ni42HJO3cFB9J2sL9o3tviXPvvN-mCdZynRm1CiOa0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"6794efb05053e898f4c5cbd7\",\r\n    \"name\": \"Portable Power Bank 10000mAh\",\r\n    \"description\": \"Compact and powerful portable power bank for charging smartphones and tablets on the go.\",\r\n    \"category\": \"Electronics\",\r\n    \"priceOld\": 39.99,\r\n    \"priceNew\": 29.99,\r\n    \"startDate\": \"2025-01-25T14:05:36.512Z\",\r\n    \"expiryDate\": \"2025-02-01T14:05:36.512Z\",\r\n    \"freeDelivery\": true,\r\n    \"deliveryAmount\": 0,\r\n    \"imageUrl\": \"localhost:12345/uploads/4c23d8e7-bbfd-4c7a-b7b2-60507ea78523.jpg\",\r\n    \"productUrl\": \"product-nytfm7n\",\r\n    \"vendorId\": \"6793ebe78ad90fbd7346dfdc\",\r\n    \"createdAt\": \"2025-01-25T14:05:36.516Z\",\r\n    \"updatedAt\": \"2025-01-25T14:05:36.516Z\",\r\n    \"__v\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/products/6794efb05053e898f4c5cbd7",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"6794efb05053e898f4c5cbd7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetBy-Product-Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/products/6793eddf82f0ac4250fa20e5",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"6793eddf82f0ac4250fa20e5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-categories-of-products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/products/category/clot",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"category",
+								"clot"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteById",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/products/6793ed1c82f0ac4250fa20dd",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"6793ed1c82f0ac4250fa20dd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upload-image",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3OTNlY2EzODJmMGFjNDI1MGZhMjBkYSIsInJvbGUiOiJ2ZW5kb3IiLCJpYXQiOjE3Mzc4MTkyNTUsImV4cCI6MTczNzgyMjg1NX0.qSqkAo78AWL76Ixxeqpv9LUJaN5tGzHBPec_jOBEkJM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/mutha/Downloads/t-shirt.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/products/upload",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3OTNlYmU3OGFkOTBmYmQ3MzQ2ZGZkYyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczNzgxOTYwMiwiZXhwIjoxNzM3ODIzMjAyfQ.wuGyX1PCVoDkpn8T5SLv5m_SCOQTnGbuRnTSwQVWovA",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "localhost:3000",
+			"type": "default"
+		}
+	]
+}

@@ -1,0 +1,230 @@
+[{
+  "_id": {
+    "$oid": "6793ebe78ad90fbd7346dfdc"
+  },
+  "username": "sanjay",
+  "email": "sanjay@admin.com",
+  "password": "$2a$10$UoBwVaSGzkqQD14M7Cd8OuKV/s8YC85pu/Lv1O3eA/gT3go2d3Auu",
+  "role": "admin",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6793ec6182f0ac4250fa20ce"
+  },
+  "username": "adminrole",
+  "email": "admin@123.com",
+  "password": "$2a$10$Sim0HiXdqXsfAzR/8rdTpODr.pIsu6V5dW0DVl/9JE8ymukkBHoji",
+  "role": "admin",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6793ec6982f0ac4250fa20d2"
+  },
+  "username": "staff_brown",
+  "email": "michael.brown@staff.com",
+  "password": "$2a$10$l2IACY3W9JmlNbKrPSzEGOM8EzYoHhXxsmRVv2XRXpILW6bVke/mi",
+  "role": "staff",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6793ec9282f0ac4250fa20d6"
+  },
+  "username": "vendor_rachel_smith",
+  "email": "rachel.smith@techstore.com",
+  "password": "$2a$10$2qLymyAyQMQfot2FqVx2CulrEXLaJB0SLWvDkMqcAmly.TNZyPyc2",
+  "role": "vendor",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6793eca382f0ac4250fa20da"
+  },
+  "username": "vendor_james_williams",
+  "email": "james.williams@techstore.com",
+  "password": "$2a$10$eyV1iLelEf5U872EWsJWhu4p07TaEIs..NbrGcKQNSpbgcRtEEirW",
+  "role": "vendor",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67950d5b07ea959b01c4e710"
+  },
+  "username": "admin_john_doe",
+  "email": "john.doe@company.com",
+  "password": "$2a$10$pqQ0eBmNSovd0zhf3irE2eTlNybZxm35FkTcf.J//Mb8tjGr.BY3a",
+  "role": "vendor",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67950d6d07ea959b01c4e719"
+  },
+  "username": "admin_john_doea",
+  "email": "john.doe@companay.com",
+  "password": "$2a$10$EEo5y/yYxDIjJUP7fjl8Ne.KkXhW9k6ng0FDc6yVYHZsSUFFkYBA6",
+  "role": "buyer",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67951d34fb4f031896eb7945"
+  },
+  "username": "staff_jane_doe",
+  "email": "jane.doe@company.com",
+  "password": "$2a$10$V3zheSUJQNjjI8V4pgu7uemAkpdaJ0G69Appf5V/3tuJ4LwHxE0Je",
+  "role": "staff",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67951d4ffb4f031896eb7949"
+  },
+  "username": "staff_alice_smith",
+  "email": "alice.smith@company.com",
+  "password": "$2a$10$O9rARG.vDSPzkBE8dUL00OBJMZm4dGQbeoLSLj2URwMrhaLvu16sW",
+  "role": "staff",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67951d5bfb4f031896eb794d"
+  },
+  "username": "staff_bob_jones",
+  "email": "bob.jones@company.com",
+  "password": "$2a$10$59NrL0eJ9mIzQk6HEKElfuiAQBvoMmD.T28k0UBsCluYZpCG5y8.q",
+  "role": "staff",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67951d63fb4f031896eb7951"
+  },
+  "username": "staff_charlie_brown",
+  "email": "charlie.brown@company.com",
+  "password": "$2a$10$eqNW4/nk7OfG4YTkoJaQM.zf5m.yqcW42uXoWluereXSOMPLcIKi.",
+  "role": "staff",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67951d6bfb4f031896eb7955"
+  },
+  "username": "staff_diana_white",
+  "email": "diana.white@company.com",
+  "password": "$2a$10$h4vEJT2dNW9hJpexjDvdU.EnfaEhsVYOKLmUfyijv5/Bky4oiRvmG",
+  "role": "staff",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67951d73fb4f031896eb7959"
+  },
+  "username": "staff_edward_green",
+  "email": "edward.green@company.com",
+  "password": "$2a$10$QRkxFzUKXI8sk72la.ZszulOxMondGL9Nr5yshwhPOzu0oy7gIIj.",
+  "role": "staff",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67951da6fb4f031896eb795d"
+  },
+  "username": "buyer_mary_jane",
+  "email": "mary.jane@company.com",
+  "password": "$2a$10$XlOX4MKPO2e04ccU2rjCHO3DUAqOANOkH4iNT7vTIGYM0XYvsoDqa",
+  "role": "buyer",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67951daefb4f031896eb7960"
+  },
+  "username": "buyer_peter_parker",
+  "email": "peter.parker@company.com",
+  "password": "$2a$10$JEoKv5hVSzDiyCwgSGtiNuBgrUZSjZKqdk2kJTPtCpsJ16dndyipW",
+  "role": "buyer",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67951db7fb4f031896eb7963"
+  },
+  "username": "buyer_tony_stark",
+  "email": "tony.stark@company.com",
+  "password": "$2a$10$DvrRXsaahRwqrskafZasLeN.z827n7oRe2f7/csv0OucqVEyNpZOK",
+  "role": "buyer",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67951dbffb4f031896eb7966"
+  },
+  "username": "buyer_bruce_wayne",
+  "email": "bruce.wayne@company.com",
+  "password": "$2a$10$1EE1hXCVhh0lT6z8OrpVaOpP4Jdxf06Ih2GFg1Gq6rLatt5OD1Y.C",
+  "role": "buyer",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67951dc7fb4f031896eb7969"
+  },
+  "username": "buyer_clark_kent",
+  "email": "clark.kent@company.com",
+  "password": "$2a$10$aZHNmqU4WH/t.ZtOnyEKaupoc1D0vV1bpcmR81DsFYrUOOjQm.ZuG",
+  "role": "buyer",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67951dcdfb4f031896eb796c"
+  },
+  "username": "buyer_diana_prince",
+  "email": "diana.prince@company.com",
+  "password": "$2a$10$sJyTkbKA5kU86nUQpyIS.OnCPBI18bOJbWDmlqYN0CrX9JbPVow9q",
+  "role": "buyer",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67951dd4fb4f031896eb796f"
+  },
+  "username": "buyer_steve_rogers",
+  "email": "steve.rogers@company.com",
+  "password": "$2a$10$yxoyZFvMlodVNbW1ryA33ewyQY0PpYk8UrHMWUpgK5mWg4a6nhLH6",
+  "role": "buyer",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67951ddafb4f031896eb7972"
+  },
+  "username": "buyer_natasha_romanoff",
+  "email": "natasha.romanoff@company.com",
+  "password": "$2a$10$XD6XUD/KxbAESW0qgF1e5.i1rhTB3eIJNLy3cwn05nADFLh1GwEpS",
+  "role": "buyer",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67951ddffb4f031896eb7975"
+  },
+  "username": "buyer_thor_odinson",
+  "email": "thor.odinson@company.com",
+  "password": "$2a$10$.3pFymO6gqUYPtasOwn/KOc36UT3MPA3YlVjfR.t0RR1hRiCF4TI6",
+  "role": "buyer",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67951de5fb4f031896eb7978"
+  },
+  "username": "buyer_wanda_maximoff",
+  "email": "wanda.maximoff@company.com",
+  "password": "$2a$10$MTEACNWnO8xgmDI3LZaa6eFWQVcAGz.qpAL7dIV1O40NUL1nMuEXm",
+  "role": "buyer",
+  "__v": 0
+}]
