@@ -79,10 +79,10 @@ ecommerce-api/
 
 ## Screenshots
 ### Example API Response for Product Retrieval
-![Product API Example](https://github.com/MuthaiyaSanjay/nodejs_assesment_for_fullstackdeveloper/blob/main/ecommerce-api/product_response.png)
+![Product API Example](https://github.com/MuthaiyaSanjay/nodejs_assesment_for_fullstackdeveloper/blob/main/ecommerce-api/uploads/product_response.png)
 
 ### Database Schema Overview
-![Database Schema](https://raw.githubusercontent.com/MuthaiyaSanjay/nodejs_assesment_for_fullstackdeveloper/main/ecommerce-api/dbcollection_screenshot.png)
+![Database Schema](https://github.com/MuthaiyaSanjay/nodejs_assesment_for_fullstackdeveloper/blob/main/ecommerce-api/uploads/dbcollection_screenshot.png)
 
 ---
 
