@@ -1,4 +1,4 @@
-const { Product } = require("../models"); // Import the Product model
+const { Product , Images} = require("../models"); // Import the Product model
 
 // Get all products with optional search and pagination
 exports.getProducts = async (req, res) => {
@@ -61,17 +61,29 @@ exports.getProductById = async (req, res) => {
 exports.createProduct = async (req, res) => {
   try {
     const { name, description, category, priceOld, priceNew, freeDelivery, deliveryAmount, imageUrl } = req.body;
-    
+
     const vendorId = req.user.id;
     if (!vendorId) {
       return res.status(403).json({ message: "Vendor ID not found in the token" });
     }
 
-    if (!name || !description || !priceOld || !priceNew) {
-      return res.status(400).json({ message: "Name, description, old price, and new price are required" });
+    if (!name || !description || !priceOld || !priceNew || !imageUrl) {
+      return res.status(400).json({ message: "Name, description, old price, new price, and image URL are required" });
     }
 
-    // Generate a unique product URL (you can customize this logic)
+    // Check if the imageUrl exists in the Image model (your custom model)
+    const existingImage = await Images.findOne({ url: imageUrl }); // Using your custom Image model
+    if (!existingImage) {
+      return res.status(400).json({ message: "The provided image URL does not exist in the Image model" });
+    }
+
+    // Check if imageUrl is unique in the Product model
+    const existingProduct = await Product.findOne({ imageUrl });
+    if (existingProduct) {
+      return res.status(400).json({ message: "The provided image URL is already associated with another product" });
+    }
+
+    // Generate a unique product URL
     const productUrl = `product-${Math.random().toString(36).substring(7)}`;
 
     // Calculate expiry date (7 days from the start date)
@@ -91,7 +103,7 @@ exports.createProduct = async (req, res) => {
       deliveryAmount,
       imageUrl,
       productUrl,
-      vendorId,  // Automatically assigned vendorId from the token
+      vendorId, // Automatically assigned vendorId from the token
     });
 
     await newProduct.save();

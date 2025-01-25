@@ -7,11 +7,11 @@ const productSchema = new mongoose.Schema(
     category: { type: String },
     priceOld: { type: Number, required: true },
     priceNew: { type: Number, required: true },
-    startDate: { type: Date, default: Date.now }, // Default to current date if not provided
+    startDate: { type: Date, default: Date.now },
     expiryDate: { type: Date, required: true },
     freeDelivery: { type: Boolean, default: false },
     deliveryAmount: { type: Number },
-    imageUrl: { type: String },
+    imageUrl: { type: String, unique: true, required: true }, // Image URL must be unique
     productUrl: { type: String, unique: true, required: true },
     vendorId: {
       type: mongoose.Schema.Types.ObjectId,
@@ -32,7 +32,7 @@ productSchema.virtual("discountPercentage").get(function () {
   return 0;
 });
 
-// Virtual field for calculating the discount amount (the difference between old and new price)
+// Virtual field for calculating the discount amount
 productSchema.virtual("discountAmount").get(function () {
   return this.priceOld - this.priceNew;
 });

@@ -6,6 +6,7 @@ const Role = require("./role");
 const Product = require("./product");
 const Vendor = require("./vendor");
 const Staff = require("./staff");
+const Images = require("./images");
 
 // Database Connection
 mongoose.connect(process.env.MONGO_URI || "mongodb://localhost:27017/ecommerce-api", {
@@ -21,4 +22,5 @@ module.exports = {
   Product,
   Vendor,
   Staff,
+  Images,
 };

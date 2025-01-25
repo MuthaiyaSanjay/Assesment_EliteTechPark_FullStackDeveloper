@@ -7,5 +7,5 @@ const ImageSchema = new mongoose.Schema({
   hash: { type: String, required: true, unique: true },  // Ensure the hash is unique
 });
 
-const Image = mongoose.model('Image', ImageSchema);
-module.exports = Image;
+const Images = mongoose.model('Image', ImageSchema);
+module.exports = Images;

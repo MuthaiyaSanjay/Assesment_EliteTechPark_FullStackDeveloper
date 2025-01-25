@@ -12,7 +12,7 @@ router.get("/category/:category", productController.getProductsByCategory); // V
 router.get("/search", productController.searchProducts);
 
 // Upload image route (only allow vendors or admins to upload images)
-router.post('/upload', authMiddleware, upload.single('file'), uploadImage);
+router.post('/upload', authMiddleware, roleMiddleware(["admin", "vendor"]), upload.single('file'), uploadImage);
 
 // Protected routes for Admin, Staff, and Vendor roles
 router.post("/", authMiddleware, roleMiddleware(["admin", "vendor"]), productController.createProduct); // Create a product

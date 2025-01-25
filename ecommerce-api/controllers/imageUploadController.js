@@ -76,7 +76,7 @@ const uploadImage = async (req, res) => {
       });
     }
 
-    const fileUrl = `${process.env.BASE_URL}/uploads/${req.file.filename}`; // Use environment variable here
+    const fileUrl = `localhost:12345/uploads/${req.file.filename}`; // Use environment variable here
     console.log(`Image file URL: ${fileUrl}`);
 
     // Step 4: Save the image details, including the hash
